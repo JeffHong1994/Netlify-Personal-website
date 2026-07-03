@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洪一勛 ｜ 專業保險理財顧問</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #d69e2e;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --white: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            color: var(--accent-color);
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .cta-section {
+            background-color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #b7791f;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>洪一勛</h1>
+        <p>財產傳承 ｜ 資產投資 ｜ 退休規劃</p>
+        <p>讓我成為您最穩固的後盾</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">核心優勢與服務</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>專業服務</h3>
+                <p>專精 Ventoy、WinPE 與 VHDX Native Boot 技術，實現秒級系統還原與無縫 Golden ISO 自動化建置，大幅降低維運時間成本。</p>
+            </div>
+            <div class="card">
+                <h3>AI 與自動化工具開發</h3>
+                <p>運用 Python、PowerShell 與 Node.js 建構專屬 AI Agent。從自動化腳本到智能數據抓取，用科技取代重複勞動。</p>
+            </div>
+            <div class="card">
+                <h3>硬體效能最佳化</h3>
+                <p>深度掌握運算級 GPU（如 RTX 3090、Tesla P40）與伺服器架構，為本地端 AI 運算提供最高性價比的硬體配置與散熱優化。</p>
+            </div>
+            <div class="card">
+                <h3>資訊不對稱破解 (BMC)</h3>
+                <p>致力於建立標準化定價模型，解決市場資訊落差，將精確數據與演算法結合，為各類專案提供透明且高效的評估機制。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2 class="section-title">準備好升級您的系統架構了嗎？</h2>
+        <p>不需要準備到完美才開始，讓我用技術陪您解決痛點。</p>
+        <a href="#" class="btn" id="contactBtn">立即啟動專案 →</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('contactBtn');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // 擴充：此處可串接您的表單或聯絡管道 API
+                alert('系統已就緒，請透過指定聯絡管道與我聯繫進行進階諮詢。');
+            });
+        });
+    </script>
+</body>
+</html>
