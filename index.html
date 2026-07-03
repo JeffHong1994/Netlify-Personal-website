@@ -11,7 +11,9 @@
             --bg-color: #f7fafc;
             --text-color: #2d3748;
             --white: #ffffff;
+            --muted: #6b7280;
         }
+        * { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
@@ -19,125 +21,150 @@
             margin: 0;
             line-height: 1.6;
         }
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        header h1 {
-            color: var(--accent-color);
-            margin: 0 0 1rem 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 1000px;
+
+        /* NAV */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 1rem 2rem;
         }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 10px auto 0;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card h3 {
+        .brand {
             color: var(--primary-color);
-            margin-top: 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
-        .cta-section {
-            background-color: var(--white);
-            text-align: center;
-            padding: 4rem 2rem;
-            margin-top: 2rem;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
+        .nav-links a { margin-left: 1rem; color: var(--primary-color); text-decoration:none; }
+
+        /* HERO */
+        header {
+            background: linear-gradient(180deg, rgba(26,54,93,0.95), rgba(26,54,93,0.85));
             color: var(--white);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            padding: 4rem 1rem;
         }
-        .btn:hover {
-            background-color: #b7791f;
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 6px solid rgba(214,158,46,0.15);
+            box-shadow: 0 20px 30px rgba(10,25,47,0.45);
+        }
+        .hero h1 {
+            margin: 0 0 0.6rem 0;
+            font-size: 2.6rem;
+            color: var(--accent-color);
+        }
+        .hero p.lead { font-size: 1.15rem; color: #e6eef8; margin: 0 0 1rem 0; }
+        .hero .meta { color: var(--muted); margin-bottom: 1.2rem; }
+        .hero .hero-ctas a { display:inline-block; margin-right:0.8rem; background:var(--white); color:var(--primary-color); padding:0.9rem 1.4rem; border-radius:40px; text-decoration:none; font-weight:600; }
+
+        .container {
+            max-width: 1100px;
+            margin: 2.4rem auto;
+            padding: 0 1rem;
+        }
+        .section-title { text-align: left; font-size:1.6rem; color:var(--primary-color); margin-bottom:1rem; }
+        .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; }
+        .card { background: var(--white); padding:1.2rem; border-radius:10px; box-shadow: 0 6px 18px rgba(15,23,42,0.06); }
+        .card h3 { margin:0 0 0.6rem 0; color:var(--primary-color); }
+
+        footer { max-width:1100px; margin:2.5rem auto; padding:1rem; color:var(--muted); text-align:center; }
+
+        @media (max-width:900px){
+            .hero { grid-template-columns: 1fr; text-align:center; }
+            .profile-image { margin: 0 auto; }
+            .nav { padding: 0.6rem 1rem; }
+            .hero h1 { font-size:2rem; }
+            .hero .hero-ctas a { margin-top:0.6rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>洪一勛</h1>
-        <p>財產傳承 ｜ 資產投資 ｜ 退休規劃</p>
-        <p>讓我成為您最穩固的後盾</p>
-    </header>
+    <nav class="nav">
+        <div class="brand">洪一勛 • 高雄</div>
+        <div class="nav-links">
+            <a href="#about">關於我</a>
+            <a href="#services">服務</a>
+            <a href="#contact">聯絡</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        <h2 class="section-title">核心優勢與服務</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>專業服務</h3>
-                <p>專精 Ventoy、WinPE 與 VHDX Native Boot 技術，實現秒級系統還原與無縫 Golden ISO 自動化建置，大幅降低維運時間成本。</p>
+    <header>
+        <div class="hero">
+            <div>
+                <img src="profile.jpg" alt="洪一勛 專業保險理財顧問" class="profile-image">
             </div>
-            <div class="card">
-                <h3>AI 與自動化工具開發</h3>
-                <p>運用 Python、PowerShell 與 Node.js 建構專屬 AI Agent。從自動化腳本到智能數據抓取，用科技取代重複勞動。</p>
-            </div>
-            <div class="card">
-                <h3>硬體效能最佳化</h3>
-                <p>深度掌握運算級 GPU（如 RTX 3090、Tesla P40）與伺服器架構，為本地端 AI 運算提供最高性價比的硬體配置與散熱優化。</p>
-            </div>
-            <div class="card">
-                <h3>資訊不對稱破解 (BMC)</h3>
-                <p>致力於建立標準化定價模型，解決市場資訊落差，將精確數據與演算法結合，為各類專案提供透明且高效的評估機制。</p>
+            <div>
+                <h1>洪一勛</h1>
+                <p class="lead">資深保險理財顧問 — 家庭保障、退休規劃與資產傳承規劃</p>
+                <p class="meta">在地深耕高雄，結合數位化工具與實務經驗，幫您建立穩健的財務藍圖。</p>
+                <div class="hero-ctas">
+                    <a href="#contact">馬上諮詢</a>
+                    <a href="https://line.me/ti/p/你的LINE" target="_blank">LINE 加好友</a>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="cta-section">
-        <h2 class="section-title">準備好升級您的系統架構了嗎？</h2>
-        <p>不需要準備到完美才開始，讓我用技術陪您解決痛點。</p>
-        <a href="#" class="btn" id="contactBtn">立即啟動專案 →</a>
-    </div>
+    <main class="container">
+        <section id="about">
+            <div class="section-title">關於我</div>
+            <div class="card">
+                <p>我從事保險與理財顧問多年，專注於替家庭建立完整保障、資產配置與稅務節流的實務方案。服務理念是：讓努力被好好保護，並把複雜的保險轉換成可執行的財務藍圖。</p>
+            </div>
+        </section>
+
+        <section id="services" style="margin-top:1.6rem;">
+            <div class="section-title">核心服務</div>
+            <div class="cards">
+                <div class="card">
+                    <h3>家庭保障規劃</h3>
+                    <p>缺口檢視、重疾與壽險建議，為家庭建立第一道防線。</p>
+                </div>
+                <div class="card">
+                    <h3>退休與年金規劃</h3>
+                    <p>以現金流與稅負優化為基礎，設計可行的退休藍圖。</p>
+                </div>
+                <div class="card">
+                    <h3>資產傳承與稅務</h3>
+                    <p>協助家族資產傳承、信託與節稅安排。</p>
+                </div>
+                <div class="card">
+                    <h3>數位化管理</h3>
+                    <p>導入自動化與工具，讓保單與客戶關係管理更有系統。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="margin-top:2rem;">
+            <div class="section-title">聯絡我</div>
+            <div class="card">
+                <p>想了解適合您的保障或職涯轉換？請透過 LINE 或 Instagram 聯絡我，或填寫預約表單安排免費諮詢。</p>
+                <p style="margin-top:0.8rem;"><strong>LINE：</strong><a href="https://line.me/ti/p/你的LINE" target="_blank">加入聊聊</a>　<strong>Instagram：</strong><a href="https://www.instagram.com/你的帳號" target="_blank">@你的帳號</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 洪一勛 ・ 版權所有
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('contactBtn');
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                // 擴充：此處可串接您的表單或聯絡管道 API
-                alert('系統已就緒，請透過指定聯絡管道與我聯繫進行進階諮詢。');
-            });
+            const cta = document.querySelector('.hero-ctas a');
+            if(cta) cta.addEventListener('click', (e)=>{});
         });
     </script>
 </body>
